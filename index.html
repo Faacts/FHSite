@@ -1,0 +1,291 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Facts Hub</title>
+	<meta content="Facts Hub" property="og:title" />
+	<meta content="Facts Hub Ontop!" property="og:description"/>
+	<meta content="#010108" data-react-helmet="true" name="theme-color" />
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		max-width: 100%;
+		scroll-behavior: smooth;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		text-decoration-line: none;
+	}
+	
+	.top {
+		min-height: 100vh;
+		width: 100%;
+		background: linear-gradient(180deg, rgb(0, 5, 23), #0b1126);
+	}
+	
+	.top h1,
+	h2,
+	h3,
+	h4,
+	p,
+	a {
+		text-align: center;
+		color: white;
+	}
+	
+	.navbar {
+		height: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		text-align: center;
+	}
+	
+	.navbar a {
+		color: #f2f2f2;
+		text-decoration: none;
+		display: inline-flex;
+		padding: 14px 16px;
+		transition: ease-in 0.1s;
+	}
+	
+	.navbar .active {
+		text-decoration-line: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 0.5em;
+		text-decoration-color: rgb(86, 114, 217);
+	}
+	
+	.navbar a:hover {
+		transform: translateY(-2px);
+		color: rgb(86, 114, 217);
+	}
+	
+	.split {
+		margin-top: 10%;
+		display: grid;
+		grid-template-columns: 2fr;
+		gap: 2rem;
+		box-sizing: border-box;
+		padding: 2rem 0;
+	}
+	
+	.title {
+		display: grid;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.title h1 {
+		font-size: 50px;
+	}
+	
+	.title b {
+		color: rgb(103, 136, 255);
+	}
+	
+	.title a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 30px;
+		padding-right: 30px;
+		border: rgb(86, 114, 217) solid 2px;
+		border-radius: 10px;
+		transition: ease-in 0.2s;
+		background: transparent;
+		text-decoration: none;
+		color: white;
+		width: auto;
+	}
+	
+	.title a:hover {
+		transform: scale(1.05);
+		cursor: pointer;
+		color: black;
+		background-color: rgb(86, 114, 217);
+	}
+	
+	.title .buttons {
+		display: inline-block;
+		text-align: center;
+		padding-top: 30px;
+	}
+	
+	.title h3 {
+		font-size: 30px;
+	}
+
+    .mainWindow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div {
+    display: block;
+}
+
+.codeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: height 1s;
+}
+
+.Code {
+    border-radius: 5px;
+    background: #292D3E;
+    box-shadow: rgb(0 0 0 / 50%) 0px 0px 5.5px;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: .5px solid #232635;
+}
+
+.codeContainer > *:not(.seperator) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.seperator {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #e6e6e6;
+    box-shadow: #000000 0px 0px 6px;
+}
+
+.codeName {
+    color: #e6e6e6;
+    font-weight: 500;
+    font-size: 22px;
+    left: 50%;
+    right: 50%;
+}
+
+.codeBlock {
+    border-radius: 5px;
+    background: #191c27;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.codeBlock > span {
+    font-size: 18px;
+    font-weight: 450;
+
+    word-wrap: break-word;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.builtin {
+    color: rgb(36, 187, 233);
+}
+
+.bracket {
+    color: rgb(204, 204, 204);
+}
+
+.function {
+    color: rgb(255, 255, 255);
+}
+
+.string {
+    color: rgb(21, 214, 37);
+}
+
+.bool {
+    color: rgb(108, 152, 255);
+}
+	</style>
+        <script>
+            function write_text(parent, content){
+              content.forEach(
+                highlight => {
+                  let span = document.createElement("span");
+                  span.appendChild(document.createTextNode(highlight[1]));
+                  span.className = highlight[0];
+      
+                  parent.appendChild(span);
+                }
+              );
+            };
+          </script>
+</head>
+
+<body>
+	<section class="top">
+		<nav class="navbar">
+        <div class="x_AgDF">
+            <script>
+                function generateUUID() { // Public Domain/MIT
+                    var d = new Date().getTime();//Timestamp
+                    var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+                    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                        var r = Math.random() * 16;//random number between 0 and 16
+                        if(d > 0){//Use timestamp until depleted
+                            r = (d + r)%16 | 0;
+                            d = Math.floor(d/16);
+                        } else {//Use microseconds since page-load if supported
+                            r = (d2 + r)%16 | 0;
+                            d2 = Math.floor(d2/16);
+                        }
+                        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+                    });
+                }
+
+                var W_KW = generateUUID();
+            </script>
+        </div>
+		<div class="split">
+			<div class="title">
+				<h1>Facts<b>Hub</b></h1>
+                <div class="mainWindow">
+                    <div style="position: relative">
+                      <div class="codeContainer">
+                        <div class="Code">
+                          <span class="codeName">Key For Whitelist System</span>
+                          <div class="codeBlock" id="Pblock">
+                            <script>
+                            console.log(document.referrer)
+                            write_text(
+                              document.getElementById("Pblock"), 
+                              [
+                                // ["builtin", W_KW.substring(1, W_KW.length - 18)],
+                                ["bracket", ""],
+                                ["builtin", "FACTSHUB-FDOJDO3Ar8"],
+                                ["bracket", ""],
+                                ["function", ""],
+                                ["bracket", ""],
+                                ["string", ``],
+                                ["bracket", ""],
+                                // ["bool", W_KW.substring(18, W_KW.length)],
+                                ["bracket", ""],
+                              ]
+                            );
+                            localStorage.setItem("WLKey", W_KW)
+                            </script>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
+<!--]=]
+print("bro stop")
+-->
