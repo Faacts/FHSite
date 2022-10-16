@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facts Hub</title>
-	<meta content="Facts Hub" property="og:title" />
-	<meta content="Facts Hub Ontop!" property="og:description"/>
+	<title>OpheliaHub</title>
+	<meta content="Ophelia Hub" property="og:title" />
+	<meta content="One Of The Best Free Hubs On Roblox" property="og:description" />
 	<meta content="#010108" data-react-helmet="true" name="theme-color" />
 	<style>
 	* {
@@ -53,12 +53,12 @@
 		text-decoration-line: underline;
 		text-decoration-thickness: 2px;
 		text-underline-offset: 0.5em;
-		text-decoration-color: rgb(86, 114, 217);
+		text-decoration-color: rgb(255, 0, 102);
 	}
 	
 	.navbar a:hover {
 		transform: translateY(-2px);
-		color: rgb(86, 114, 217);
+		color: rgb(255, 0, 102);
 	}
 	
 	.split {
@@ -81,7 +81,7 @@
 	}
 	
 	.title b {
-		color: rgb(255, 0, 100);
+		color: rgb(255, 0, 102);
 	}
 	
 	.title a {
@@ -89,7 +89,7 @@
 		padding-bottom: 10px;
 		padding-left: 30px;
 		padding-right: 30px;
-		border: rgb(86, 114, 217) solid 2px;
+		border: rgb(255, 0, 102) solid 2px;
 		border-radius: 10px;
 		transition: ease-in 0.2s;
 		background: transparent;
@@ -102,7 +102,7 @@
 		transform: scale(1.05);
 		cursor: pointer;
 		color: black;
-		background-color: rgb(86, 114, 217);
+		background-color: rgba(255, 0, 102);
 	}
 	
 	.title .buttons {
@@ -114,179 +114,43 @@
 	.title h3 {
 		font-size: 30px;
 	}
-
-    .mainWindow {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-div {
-    display: block;
-}
-
-.codeContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: height 1s;
-}
-
-.Code {
-    border-radius: 5px;
-    background:;
-    box-shadow: rgb(0 0 0 / 50%) 0px 0px 5.5px;
-    padding: 7px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: .5px solid #000000;
-}
-
-.codeContainer > *:not(.seperator) {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.seperator {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    border-radius: 50%;
-    background: #e6e6e6;
-    box-shadow: #000000 0px 0px 6px;
-}
-
-.codeName {
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 22px;
-    left: 50%;
-    right: 50%;
-}
-
-.codeBlock {
-    border-radius: 5px;
-    background: ;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin-top: 10px;
-    border: .5px solid #000000;
-    display: inline-block;
-}
-
-.codeBlock > span {
-    font-size: 20px;
-    font-weight: 450;
-
-    word-wrap: break-word;
-    font-family: 'Source Code Pro', monospace;
-}
-
-.builtin {
-    color: rgb(255, 255, 255);
-}
-
-.bracket {
-    color: rgb(204, 204, 204);
-}
-
-.function {
-    color: rgb(255, 255, 255);
-}
-
-.string {
-    color: rgb(21, 214, 37);
-}
-
-.bool {
-    color: rgb(108, 152, 255);
-}
 	</style>
-        <script>
-            function write_text(parent, content){
-              content.forEach(
-                highlight => {
-                  let span = document.createElement("span");
-                  span.appendChild(document.createTextNode(highlight[1]));
-                  span.className = highlight[0];
-      
-                  parent.appendChild(span);
-                }
-              );
-            };
-          </script>
 </head>
 
 <body>
-	<section class="top">
-		<nav class="navbar">
-        <div class="x_AgDF">
-            <script>
-                function generateUUID() { // Public Domain/MIT
-                    var d = new Date().getTime();//Timestamp
-                    var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
-                    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                        var r = Math.random() * 16;//random number between 0 and 16
-                        if(d > 0){//Use timestamp until depleted
-                            r = (d + r)%16 | 0;
-                            d = Math.floor(d/16);
-                        } else {//Use microseconds since page-load if supported
-                            r = (d2 + r)%16 | 0;
-                            d2 = Math.floor(d2/16);
-                        }
-                        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-                    });
-                }
+	<div class="Code">
+		<script>
+		if(document.referrer && document.referrer != "") {
+			console.log(document.referrer.toString())
+			if(document.referrer.toString().match("youtube")) {
+				console.log("came from youtube");
+			}
+		}
 
-                var W_KW = generateUUID();
-            </script>
-        </div>
-		<div class="split">
-			<div class="title">
-				<h1>Facts<b> Hub</b></h1>
-                <div class="mainWindow">
-                    <div style="position: relative">
-                      <div class="codeContainer">
-                        <div class="Code">
-                          <span class="codeName">Key For Whitelist System</span>
-                          <div class="codeBlock" id="Pblock">
-                            <script>
-                            console.log(document.referrer)
-                            write_text(
-                              document.getElementById("Pblock"), 
-                              [
-                                // ["builtin", W_KW.substring(1, W_KW.length - 18)],
-                                ["bracket", ""],
-                                ["builtin", "FACTSHUB-FDOJDO3Ar8"],
-                                ["bracket", ""],
-                                ["function", ""],
-                                ["bracket", ""],
-                                ["string", ``],
-                                ["bracket", ""],
-                                // ["bool", W_KW.substring(18, W_KW.length)],
-                                ["bracket", ""],
-                              ]
-                            );
-                            localStorage.setItem("WLKey", W_KW)
-                            </script>
-                          </div>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+		function copy(input) {
+			if(navigator.clipboard) {
+				navigator.clipboard.writeText(input).then(() => {
+					console.log('Copied to clipboard successfully.');
+				}, (err) => {
+					console.log('Failed to copy the text to clipboard.', err);
+				});
+			} else
+			if(window.clipboardData) {
+				window.clipboardData.setData("Text", input);
+			}
+		}
+		var loadstring = `loadstring(game:HttpGet('https://factshub.vercel.app/Loader.lua'))();`
+		</script>
+	</div>
+	<section class="top">
+		<nav class="navbar"> <a class="active" href="./index.html">Home</a>
+			<div class="split">
+				<div class="title">
+					<h1>Facts<b> Hub</b></h1>
+					<div class="buttons"> <a href="./Script.html" onclick="copy(loadstring)">Get Script</a> <a href="https://workink.net/2iy/ophelia-key">Get Key</a> </div>
+				</div>
 			</div>
-		</div>
 	</section>
 </body>
+
 </html>
-<!--]=]
-print("bro stop")
--->
