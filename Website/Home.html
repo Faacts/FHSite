@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Facts Hub</title>
-	<meta content="Facts Hub" property="og:title" />
+	<title>Pearl</title>
+	<meta content="Pearl" property="og:title" />
 	<meta content="One Of The Best Free Hubs On Roblox" property="og:description" />
 	<meta content="#010108" data-react-helmet="true" name="theme-color" />
 	<style>
@@ -140,17 +140,33 @@
 				window.clipboardData.setData("Text", input);
 			}
 		}
-		var loadstring = `loadstring(game:HttpGet('https://factshub.vercel.app/Loader.lua'))();`
+		var loadstring = `loadstring(game:HttpGet('https://factshub.vercel.app'))()`
 		</script>
 	</div>
 	<section class="top">
 		<nav class="navbar"> <a class="active" href="./Home.html">Home</a>
 			<div class="split">
 				<div class="title">
-					<h1>Facts<b> Hub</b></h1>
+					<h1>Pearl</h1>
 					<div class="buttons"> <a href="./Script.html" onclick="copy(loadstring)">Get Script</a> <a href="https://factshub.vercel.app/Website/Key">Get Key</a> <a href="https://discord.gg/wP6XfkXmAk">Discord</a></div>
 				</div>
 			</div>
+			<p>Pearl has been executed</p>
+            <h1 id="count">0</h1>
+            <p>times</p>
+        
+            <script>
+              const countEl = document.getElementById("count");
+              countvisits();
+        
+              function countvisits() {
+                fetch('https://api.countapi.xyz/update/Pearl/PRL?amount=1')
+                  .then((res) => res.json())
+                  .then((res) => {
+                    countEl.innerHTML = res.value;
+                  });
+              }
+            </script>
 	</section>
 </body>
 </html>
