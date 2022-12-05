@@ -21,7 +21,7 @@
 	.top {
 		min-height: 100vh;
 		width: 100%;
-		background-image: linear-gradient(to right top, #474554, #5f5c70, #78748d, #918dac, #aca7cb);
+		background-image: linear-gradient(to right top, #C72C41, #801336, #510A32, #2D142C, #2D142C);
 	}
 	
 	.top h1,
@@ -42,7 +42,7 @@
 	}
 	
 	.navbar a {
-		color: #f2f2f2;
+		color: #ffffff;
 		text-decoration: none;
 		display: inline-flex;
 		padding: 14px 16px;
@@ -53,12 +53,12 @@
 		text-decoration-line: underline;
 		text-decoration-thickness: 2px;
 		text-underline-offset: 0.5em;
-		text-decoration-color: rgb(172, 167, 203);
+		text-decoration-color: rgb(255, 255, 255);
 	}
 	
 	.navbar a:hover {
 		transform: translateY(-2px);
-		color: rgb(172, 167, 203);
+		color: rgb(255, 255, 255);
 	}
 	
 	.split {
@@ -81,7 +81,7 @@
 	}
 	
 	.title b {
-		color: rgb(172, 167, 203);
+		color: rgb(255, 255, 255);
 	}
 	
 	.title a {
@@ -89,7 +89,7 @@
 		padding-bottom: 10px;
 		padding-left: 30px;
 		padding-right: 30px;
-		border: rgb(172, 167, 203) solid 2px;
+		border: rgb(255, 255, 255) solid 2px;
 		border-radius: 10px;
 		transition: ease-in 0.2s;
 		background: transparent;
@@ -102,7 +102,7 @@
 		transform: scale(1.05);
 		cursor: pointer;
 		color: black;
-		background-color: rgb(172, 167, 203);
+		background-color: rgb(255, 255, 255);
 	}
 	
 	.title .buttons {
@@ -136,16 +136,6 @@ div {
     transition: height 1s;
 }
 
-.Code {
-    border-radius: 25px;
-    background:;
-    padding: 7px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: .5px solid #fffff;
-}
-
 .codeContainer > *:not(.seperator) {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -176,7 +166,7 @@ div {
     padding-top: 25px;
     padding-bottom: 25px;
     margin-top: 10px;
-    border: 2px solid #CBCBCB;
+    border: 2px solid #000000;
     display: inline-block;
 }
 
@@ -189,7 +179,7 @@ div {
 }
 
 .builtin {
-    color: rgb(115, 189, 230);
+    color: rgb(255, 255, 255);
 }
 
 .bracket {
@@ -201,7 +191,7 @@ div {
 }
 
 .string {
-    color: rgb(150, 255, 250);
+    color: rgb(2555, 255, 255);
 }
 
 .bool {
@@ -249,12 +239,11 @@ div {
         </div>
 		<div class="split">
 			<div class="title">
-				<h1>Facts<b> Hub</b></h1>
                 <div class="mainWindow">
+                    <h1>Pearl</h1>
                     <div style="position: relative">
                       <div class="codeContainer">
                         <div class="Code">
-                          <span class="codeName">Facts Hub Loadstring</span>
                           <div class="codeBlock" id="Pblock">
                             <script>
                             write_text(
@@ -266,7 +255,7 @@ div {
                                 ["bracket", ":"],
                                 ["function", "HttpGet"],
                                 ["bracket", "("],
-                                ["string", `"https://raw.githubusercontent.com/Faacts/FactsHub/main/Loader"`],
+                                ["string", `"https://ppearl.vercel.app"`],
                                 ["bracket", ""],
                                 ["bool", ""],
                                 ["bracket", "))()"],
