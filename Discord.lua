@@ -12,7 +12,7 @@ Origin = 'https://discord.com'
 Body = HttpService:JSONEncode({
 cmd = 'INVITE_BROWSER',
 nonce = HttpService:GenerateGUID(false),
-args = {code = 'wP6XfkXmAk'}
+args = {code = 'enEXD8kzq4'}
 })
 })
 end
